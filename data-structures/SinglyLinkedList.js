@@ -107,6 +107,22 @@ class SinglyLinkedList {
         this.length--
         return true
     }
+
+    reverse() {
+        // Interchange head and tail
+        let current = this.head
+        let temp = this.head
+        this.head = this.tail
+        this.tail = temp
+        let prev = null
+        while (current) {
+            let nxt = current.next
+            current.next = prev
+            prev = current
+            current = nxt
+        }
+        return true
+    }
 }
 
 // let list = new SinglyLinkedList()
