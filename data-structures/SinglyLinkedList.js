@@ -56,7 +56,7 @@ class SinglyLinkedList {
         return true
     }
 
-    shift(val) {
+    unshift(val) {
         let node = new Node(val)
         if (this.length === 0) {
             this.head = node
@@ -69,7 +69,7 @@ class SinglyLinkedList {
         return true
     }
 
-    unshift() {
+    shift() {
         if (this.length === 0) return false
         if (this.length === 1) {
             this.initialise()
@@ -131,4 +131,3 @@ class SinglyLinkedList {
 // list.push(30)
 // list.push(40)
 // list.push(50)
-
