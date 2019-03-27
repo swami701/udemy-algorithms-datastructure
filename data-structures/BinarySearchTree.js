@@ -74,6 +74,14 @@ class BinarySearchTree {
         this.traverseInOrder(node.right, result)
         return result
     }
+
+    traversePreOrder(node = null, result) {
+        if (!node) return
+        result.push(node.val)
+        this.traversePreOrder(node.left, result)
+        this.traversePreOrder(node.right, result)
+        return result
+    }
 }
 
 let bst = new BinarySearchTree()
