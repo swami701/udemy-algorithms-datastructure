@@ -47,6 +47,25 @@ class BinarySearchTree {
         }
         return false
     }
+
+    traverseBFS() {
+        if (this.root === null) return undefined;
+        let queue = []
+        let result = []
+        let current = this.root;
+        queue.push(current)
+        while(queue.length > 0) {
+            let node = queue.shift()
+            result.push(node.val)
+            if (node.left) {
+                queue.push(node.left)
+            }
+            if (node.right) {
+                queue.push(node.right)
+            }
+        }
+        return result
+    }
 }
 
 let bst = new BinarySearchTree()
@@ -63,3 +82,4 @@ bst.insert(16)
 //    5     15
 //   / \   /  \
 // 3    8 12   16
+
