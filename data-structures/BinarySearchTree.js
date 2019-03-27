@@ -66,6 +66,14 @@ class BinarySearchTree {
         }
         return result
     }
+
+    traverseInOrder(node = null, result) {
+        if (!node) return
+        this.traverseInOrder(node.left, result)
+        result.push(node.val)
+        this.traverseInOrder(node.right, result)
+        return result
+    }
 }
 
 let bst = new BinarySearchTree()
@@ -82,4 +90,3 @@ bst.insert(16)
 //    5     15
 //   / \   /  \
 // 3    8 12   16
-
